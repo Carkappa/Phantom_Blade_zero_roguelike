@@ -1,0 +1,31 @@
+{
+  "_about": "Blessings. Each stack applies the effects again. Effect types are listed in crates/core/src/content.rs (Effect). Nothing here writes anything lasting into your character: blessings change what is summoned, heal you, or change the run's own bookkeeping.",
+  "blessings": [
+    {"id": "steady_breath", "name": "Steady Breath", "rarity": "common", "max_stacks": 3, "desc": "Heal 5% of your health after each fight.", "effects": [{"type": "heal_after_fight", "pct": 5}]},
+    {"id": "bitter_tea", "name": "Bitter Tea", "rarity": "common", "max_stacks": 3, "desc": "Heal 4% of your health when a fight begins.", "effects": [{"type": "heal_on_fight_start", "pct": 4}]},
+    {"id": "travelers_purse", "name": "Traveler's Purse", "rarity": "common", "max_stacks": 3, "desc": "Gain 20% more gold.", "effects": [{"type": "gold_gain", "pct": 20}]},
+    {"id": "dulled_edges", "name": "Dulled Edges", "rarity": "common", "max_stacks": 3, "desc": "Enemies start with 4% less health.", "effects": [{"type": "enemy_health", "pct": -4}]},
+    {"id": "hagglers_tongue", "name": "Haggler's Tongue", "rarity": "common", "max_stacks": 2, "desc": "Merchants charge 15% less.", "effects": [{"type": "shop_discount", "pct": 15}]},
+    {"id": "shrine_incense", "name": "Shrine Incense", "rarity": "common", "max_stacks": 3, "desc": "Shrines heal 10% more of your health.", "effects": [{"type": "rest_heal", "pct": 10}]},
+    {"id": "loose_floorboard", "name": "Loose Floorboard", "rarity": "common", "max_stacks": 5, "desc": "Gain 40 gold now.", "effects": [{"type": "gold_now", "amount": 40}]},
+    {"id": "field_dressing", "name": "Field Dressing", "rarity": "common", "max_stacks": 5, "desc": "Heal 25% of your health now.", "effects": [{"type": "heal_now", "pct": 25}]},
+    {"id": "thin_the_herd", "name": "Thin the Herd", "rarity": "common", "max_stacks": 1, "desc": "Packs have one enemy fewer.", "effects": [{"type": "pack_size", "delta": -1}]},
+    {"id": "keen_eye", "name": "Keen Eye", "rarity": "common", "max_stacks": 3, "desc": "Rare blessings turn up more often.", "effects": [{"type": "rare_chance", "pct": 10}]},
+
+    {"id": "second_wind", "name": "Second Wind", "rarity": "rare", "max_stacks": 2, "desc": "Heal 12% of your health after each fight.", "effects": [{"type": "heal_after_fight", "pct": 12}]},
+    {"id": "marked_prey", "name": "Marked Prey", "rarity": "rare", "max_stacks": 2, "desc": "Elites start with 12% less health.", "effects": [{"type": "elite_health", "pct": -12}]},
+    {"id": "wide_road", "name": "The Wide Road", "rarity": "rare", "max_stacks": 1, "desc": "One more blessing to choose from after each fight.", "effects": [{"type": "extra_choice", "n": 1}]},
+    {"id": "unsettling_calm", "name": "Unsettling Calm", "rarity": "rare", "max_stacks": 3, "desc": "Enemies are one level lower.", "effects": [{"type": "enemy_level", "delta": -1}]},
+    {"id": "golden_tongue", "name": "Golden Tongue", "rarity": "rare", "max_stacks": 1, "desc": "Merchants charge 30% less.", "effects": [{"type": "shop_discount", "pct": 30}]},
+    {"id": "paper_effigy", "name": "Paper Effigy", "rarity": "rare", "max_stacks": 3, "desc": "The next death is forgiven: you fight that battle again.", "effects": [{"type": "revive", "charges": 1}]},
+    {"id": "blood_price", "name": "Blood Price", "rarity": "rare", "max_stacks": 2, "desc": "Enemies are two levels higher. Gain 60% more gold.", "effects": [{"type": "enemy_level", "delta": 2}, {"type": "gold_gain", "pct": 60}]},
+    {"id": "war_chest", "name": "War Chest", "rarity": "rare", "max_stacks": 3, "desc": "Gain 120 gold now.", "effects": [{"type": "gold_now", "amount": 120}]},
+
+    {"id": "kingslayers_oath", "name": "Kingslayer's Oath", "rarity": "legendary", "max_stacks": 1, "desc": "Lords start with 20% less health.", "effects": [{"type": "lord_health", "pct": -20}]},
+    {"id": "undying_vow", "name": "Undying Vow", "rarity": "legendary", "max_stacks": 1, "desc": "The next two deaths are forgiven.", "effects": [{"type": "revive", "charges": 2}]},
+    {"id": "tide_turner", "name": "Tide Turner", "rarity": "legendary", "max_stacks": 1, "desc": "Heal 10% of your health when a fight begins and 10% after it.", "effects": [{"type": "heal_on_fight_start", "pct": 10}, {"type": "heal_after_fight", "pct": 10}]},
+    {"id": "quiet_world", "name": "The Quiet World", "rarity": "legendary", "max_stacks": 1, "desc": "Enemies are three levels lower.", "effects": [{"type": "enemy_level", "delta": -3}]},
+    {"id": "hunters_feast", "name": "Hunter's Feast", "rarity": "legendary", "max_stacks": 1, "desc": "Enemies start with 10% less health.", "effects": [{"type": "enemy_health", "pct": -10}]},
+    {"id": "crowded_road", "name": "The Crowded Road", "rarity": "legendary", "max_stacks": 1, "desc": "Packs have one enemy more. Gain twice the gold.", "effects": [{"type": "pack_size", "delta": 1}, {"type": "gold_gain", "pct": 100}]}
+  ]
+}

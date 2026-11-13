@@ -1,0 +1,14 @@
+begin	41
+proto	1	0.1.0
+session	s-9
+ready	1	ready
+player	812.5	1000.0	1
+ack	d1-5	ok	summoned
+unit	u7	alive	5000.0	9000.0	BP_Monster_MoTian
+unit	u8	dead	0.0	800.0	BP_Monster_Dog
+unit	u9	gone	12.3	800.0	BP_Monster_Dog
+key	3	1
+key	4	2
+probe	world	ok	World /Game/Map
+probe	codex	fail	two\nlines
+end	41	14

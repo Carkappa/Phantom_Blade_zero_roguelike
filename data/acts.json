@@ -1,0 +1,42 @@
+{
+  "_about": "The acts of a run and its numbers. Enemy levels follow the game's own scale (1 to 60). 'rules' may override any default listed in crates/core/src/content.rs (Rules).",
+  "rules": {},
+  "acts": [
+    {
+      "name": "The Weeping Valley",
+      "chapters": [1, 2],
+      "floors": 10,
+      "level_start": 3,
+      "level_end": 10,
+      "elite_level_bonus": 2,
+      "lord_level_bonus": 2,
+      "pack_min": 2,
+      "pack_max": 3,
+      "duel_chance": 35
+    },
+    {
+      "name": "The Dead Town",
+      "chapters": [3, 4, 5],
+      "floors": 10,
+      "level_start": 11,
+      "level_end": 18,
+      "elite_level_bonus": 2,
+      "lord_level_bonus": 3,
+      "pack_min": 2,
+      "pack_max": 4,
+      "duel_chance": 45
+    },
+    {
+      "name": "Severed-Soul Mountain",
+      "chapters": [6, 7, 10, 12],
+      "floors": 10,
+      "level_start": 19,
+      "level_end": 26,
+      "elite_level_bonus": 2,
+      "lord_level_bonus": 4,
+      "pack_min": 2,
+      "pack_max": 4,
+      "duel_chance": 55
+    }
+  ]
+}

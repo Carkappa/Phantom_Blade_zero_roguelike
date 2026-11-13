@@ -1,0 +1,8 @@
+PBZR1	d1-5	spawn	u7	BP_Monster_MoTian	12	90	0	1
+PBZR1	a	clear
+PBZR1	a	heal	35
+PBZR1	a	hurt	12
+PBZR1	a	probe
+PBZR1	s1	screen	1	Title\n 1. A\tB \\ end
+PBZR1	h1	hello	0.1.0
+PBZR1	s2	screen	0	

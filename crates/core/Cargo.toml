@@ -1,0 +1,10 @@
+[package]
+name = "pbz-rogue-core"
+description = "Run logic for the Phantom Blade Zero roguelike mod. No game needed: everything here is tested off-game."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true

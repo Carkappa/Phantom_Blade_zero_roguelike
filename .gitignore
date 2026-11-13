@@ -1,0 +1,6 @@
+/target/
+/dist/
+# Written at runtime by the director and the in-game bridge.
+/mod/PBZRoguelike/Runtime/*
+!/mod/PBZRoguelike/Runtime/README.txt
+.DS_Store

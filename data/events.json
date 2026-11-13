@@ -1,0 +1,90 @@
+{
+  "_about": "Events met on '?' nodes. Outcome types are listed in crates/core/src/content.rs (Outcome). Every event needs one option that costs no gold.",
+  "events": [
+    {
+      "id": "wounded_swordsman",
+      "title": "The Wounded Swordsman",
+      "text": "A swordsman sits against a tree, one hand pressed to his side. His purse lies in the grass beside him.",
+      "options": [
+        {"label": "Bind his wounds (lose 8% health, gain a rare blessing)", "result": "It costs you blood and bandages. He presses a keepsake into your hand before he sleeps.", "outcomes": [{"type": "hurt", "pct": 8}, {"type": "blessing", "rarity": "rare"}]},
+        {"label": "Take the purse (gain 45 gold)", "result": "He watches you take it and says nothing.", "outcomes": [{"type": "gold", "amount": 45}]},
+        {"label": "Walk on", "result": "You leave him to the road.", "outcomes": []}
+      ]
+    },
+    {
+      "id": "roadside_shrine",
+      "title": "The Roadside Shrine",
+      "text": "A small shrine, still tended. Coins lie in the offering bowl.",
+      "options": [
+        {"label": "Make an offering (heal 30% health)", "cost_gold": 30, "result": "The incense burns down. You feel lighter.", "outcomes": [{"type": "heal", "pct": 30}]},
+        {"label": "Take the offerings (even odds: 60 gold, or lose 15% health)", "result": "", "outcomes": [{"type": "gamble", "pct": 50, "win": [{"type": "gold", "amount": 60}], "win_text": "Nobody sees. The bowl is empty and your purse is not.", "lose": [{"type": "hurt", "pct": 15}], "lose_text": "The shrine keeper's staff finds your ribs before you see him."}]},
+        {"label": "Bow and leave", "result": "You bow and go on.", "outcomes": []}
+      ]
+    },
+    {
+      "id": "dice_man",
+      "title": "The Dice Man",
+      "text": "A man rattles three dice in a cup. \"Forty on the table,\" he says, \"and a hundred comes back if they like you.\"",
+      "options": [
+        {"label": "Play (even odds: win 100 gold)", "cost_gold": 40, "result": "", "outcomes": [{"type": "gamble", "pct": 50, "win": [{"type": "gold", "amount": 100}], "win_text": "The dice like you. He pays with a sour face.", "lose": [], "lose_text": "The dice do not like you."}]},
+        {"label": "Decline", "result": "He shrugs and rattles the cup at the next traveler.", "outcomes": []}
+      ]
+    },
+    {
+      "id": "narrow_road",
+      "title": "The Narrow Road",
+      "text": "The road narrows between two rock walls. Someone is waiting in the gap, and not alone.",
+      "options": [
+        {"label": "Fight through (an elite fight, with its reward)", "result": "You draw.", "outcomes": [{"type": "ambush"}]},
+        {"label": "Pay the toll", "cost_gold": 35, "result": "They count it twice and let you pass.", "outcomes": []},
+        {"label": "Climb around (lose 12% health)", "result": "The cliff path takes skin from your hands and knees.", "outcomes": [{"type": "hurt", "pct": 12}]}
+      ]
+    },
+    {
+      "id": "old_master",
+      "title": "The Old Master",
+      "text": "An old master sweeps the courtyard of an empty school. He looks at how you carry your blade and sighs.",
+      "options": [
+        {"label": "Train until dusk (lose 15% health, gain a rare blessing)", "result": "He is not gentle. By dusk you have learned something.", "outcomes": [{"type": "hurt", "pct": 15}, {"type": "blessing", "rarity": "rare"}]},
+        {"label": "Listen a while (gain a common blessing)", "result": "He talks, you listen. Some of it stays.", "outcomes": [{"type": "blessing", "rarity": "common"}]}
+      ]
+    },
+    {
+      "id": "abandoned_cart",
+      "title": "The Abandoned Cart",
+      "text": "A cart stands in the road with no horse and no driver. Its load is still roped down.",
+      "options": [
+        {"label": "Search it (likely 50 gold; it may be bait)", "result": "", "outcomes": [{"type": "gamble", "pct": 60, "win": [{"type": "gold", "amount": 50}], "win_text": "Under the sacking there is a strongbox, and it is not locked.", "lose": [{"type": "ambush"}], "lose_text": "The rope is cut from inside. It was bait."}]},
+        {"label": "Leave it", "result": "You give the cart a wide berth.", "outcomes": []}
+      ]
+    },
+    {
+      "id": "healers_hut",
+      "title": "The Healer's Hut",
+      "text": "Smoke rises from a hut hung with drying herbs. The healer looks you over without much hope.",
+      "options": [
+        {"label": "Buy a remedy (heal 50% health)", "cost_gold": 40, "result": "It tastes of mud and works at once.", "outcomes": [{"type": "heal", "pct": 50}]},
+        {"label": "Rest by the fire (heal 15% health)", "result": "The fire is warm and nobody asks you anything.", "outcomes": [{"type": "heal", "pct": 15}]}
+      ]
+    },
+    {
+      "id": "effigy_maker",
+      "title": "The Effigy Maker",
+      "text": "A woman folds paper figures by lamplight. Each has a face. One of them, you notice, has yours.",
+      "options": [
+        {"label": "Buy it (one death forgiven)", "cost_gold": 90, "result": "She wraps it in red thread. \"It dies so you need not. Once.\"", "outcomes": [{"type": "revive", "charges": 1}]},
+        {"label": "Pay in blood (lose 30% health, one death forgiven)", "result": "She takes what she needs with a small knife and is careful about it.", "outcomes": [{"type": "hurt", "pct": 30}, {"type": "revive", "charges": 1}]},
+        {"label": "Refuse", "result": "She puts your face back in the basket with the others.", "outcomes": []}
+      ]
+    },
+    {
+      "id": "beggar",
+      "title": "The Beggar at the Gate",
+      "text": "A beggar holds out a bowl. His hands are a swordsman's hands.",
+      "options": [
+        {"label": "Give 20 gold", "cost_gold": 20, "result": "", "outcomes": [{"type": "gamble", "pct": 40, "win": [{"type": "blessing", "rarity": "rare"}], "win_text": "\"Then take this,\" he says, and shows you one thing, once.", "lose": [], "lose_text": "He thanks you and says nothing more."}]},
+        {"label": "Pass by", "result": "He does not look up.", "outcomes": []}
+      ]
+    }
+  ]
+}

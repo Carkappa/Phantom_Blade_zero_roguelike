@@ -1,0 +1,49 @@
+name: build
+
+on:
+  push:
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      # UE4SS embeds Lua 5.4, so the bridge scripts are tested with it.
+      - name: Install Lua 5.4
+        run: sudo apt-get update && sudo apt-get install -y lua5.4
+      - name: Format
+        run: cargo fmt --all --check
+      - name: Lint
+        run: cargo clippy --workspace --all-targets -- -D warnings
+      - name: Bridge tests (Lua 5.4)
+        run: lua5.4 tests/lua/run_tests.lua .
+      - name: Tests
+        run: cargo test --workspace
+        env:
+          PBZR_LUA: lua5.4
+          PBZR_REQUIRE_LUA: "1"
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Tests
+        run: cargo test --workspace
+      - name: Build
+        run: cargo build --release -p pbz-rogue-director
+      - name: Package
+        shell: bash
+        run: tools/package.sh target/release/pbz-roguelike.exe
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PBZRoguelike
+          path: dist/PBZRoguelike
+          if-no-files-found: error
